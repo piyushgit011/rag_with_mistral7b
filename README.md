@@ -16,10 +16,27 @@ To ensure a seamless workflow, we employ LangChain to orchestrate the entire pro
     
 ## 3.Zero-shot example
    - example prompt used to inference on a sample question to test the llm endpoint is working properly.
-     
 
+## 4.RAG example with PDF files
+   - now, importing the text_splitter,embeddings, vectorstores, document_loaders and chains for retrieval of the information from the embeddings.
+   - then, i have uploaded all the pdfs in the s3 bucket.
 
+## 5.Analyze documents with Amazon Textract and split them in chunks
+   - now, using AmazonTextractPDFLoader and RecursiveCharacterTextSplitter we will split the texts and load into chunks.
 
+## 6.Embed document chunks and store them in FAISS
+   - now using a opensource pre trained embedding model to make the embeddings of the chunks and store it in the name "faiss_index".
+
+## 7.Shortcut : load existing embedding database
+   - load the stored faiss_index using FAISS.load_local
+
+## 8.Configure RAG chain
+   - now, retrieve all the embeddings.
+   - using RetrievalQA we will use the embeddings to query and using the template for our custom prompt.
+## 9.Ask our question again
+   - now, you can ask different questions from the pdf files.
+## 10.Delete endpoint and model
+   - After using it successfully i have deleted the endpoint on the aws sagemaker.
 
 
 
